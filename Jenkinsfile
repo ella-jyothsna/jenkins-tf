@@ -3,14 +3,8 @@ pipeline {
 	
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-key')
-	GIT_TOKEN = credentials('git-token')
     }
-	
-    stages {
-        stage('Git Checkout') {
-            steps {
-               git "https://${GIT_TOKEN}@github.com/ella-jyothsna/jenkins-tf.git"
-            }
+
         }
         
         stage('Terraform Init') {
